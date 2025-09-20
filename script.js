@@ -18,13 +18,16 @@ console.log(`My #${i + 1} favorite food is ${favoriteFoods[i]}`);
     // "Have you ever tried ____?"
     // "I always recommend ____ to friends."
     // "Trust me — ____ is delicious."
-
-
-
+{
+  console.log(`Have you ever tried ${foodName}?`);
+  console.log(`I always recommend ${foodName} to friends.`);
+  console.log(`Trust me — ${foodName} is delicious.`);
+}
 
 // 4b. Call the function at least 3 times
-
-
+printFoodRecommendation("Ramen");
+printFoodRecommendation("Pho");
+printFoodRecommendation("Sushi");
 
 // Here's a list of 50 friends' favorite foods:
 let friendFavorites = [
@@ -32,14 +35,18 @@ let friendFavorites = [
   ];
 
 // 5. Print out only foods that have an "a" in the name. For example, "Pizza" would not be included, but "Pasta" would be.
-
-
+for (let food of friendFavorites) {
+  if (food.toLowerCase().includes("a")) {
+    console.log(food);
+  }
 
 // 6. Store the result in an array called foodsWithA. Print out the array.
-
-
+let foodsWithA = friendFavorites.filter(food => food.toLowerCase().includes("a"));
+console.log("Foods with 'a' in the name:", foodsWithA);
 
 // 7. Create a new array longFoodNames for foods with names longer than 6 characters.
+let longFoodNames = friendFavorites.filter(food => food.length > 6);
+console.log("Long-named foods:", longFoodNames);
 
 
 
